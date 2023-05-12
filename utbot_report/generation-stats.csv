@@ -1,0 +1,4 @@
+File,Klee Time (s),Solver Time (s),Resolution Time (s),Regression Tests Generated,Error Tests Generated,Covered Functions,Total functions
+lib/libfunc.c,0.00,0.00,0.00,1,1,1,1
+src/main.c,0.00,0.00,0.00,8,4,1,1
+Total:,0.00 (preprocessing +0.21),0.00,0.00,9,5,2,2
