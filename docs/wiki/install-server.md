@@ -1,6 +1,5 @@
 # Install the UnitTestBot C/C++ server
 
-TEST
 To meet [system requirements](system-requirements.md), 
 choose one of the UnitTestBot C/C++ installation options and prepare the corresponding environment:
 
