@@ -10,19 +10,10 @@ jobs:
   update-wiki:
     runs-on: ubuntu-latest
     steps:
-      #           - name: wiki-safe
-      #             run: |
-      #                 git config --global --add safe.directory /wiki
       - uses: actions/checkout@master
       - name: Sync Wiki
-        #             uses: joeizzard/action-wiki-sync@master
-        uses: AbdullahAlfaraj/ghaction-wiki-sync@master
-
-
+        uses: cmbrose/github-docs-to-wiki@master
         with:
-          username: olganaumenko
-          access_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
-          wiki_folder: docs/wiki
-          commit_username: 'Olga Naumenko '
-          commit_email: '64418523+olganaumenko@users.noreply.github.com'
-          commit_message: 'action: wiki sync'
+          githubToken: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+          rootDocsFolder: docs
+          useHeaderForWikiName: true
