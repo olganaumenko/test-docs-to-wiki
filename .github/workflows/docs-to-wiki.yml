@@ -1,51 +1,90 @@
-name: github-docs-to-wiki
-author: cmbrose
-description: Converts markdown content in a repository into a wiki.
+name: Wiki Content Sync
 
-inputs:
+on:
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - "docs/**"
+  repository_dispatch:
+    types: [docs]
+  workflow_dispatch:
+  gollum:
 
-  githubToken:
-    description: The GitHub PAT, used to clone the wiki repo
-    required: true
+env:
+  GIT_AUTHOR_NAME: GitHub Action
+  GIT_AUTHOR_EMAIL: action@github.com
+  SYNC_CHANGES_REPO_NAME: docs-sync
 
-  defaultBranch:
-    description: The default branch name (master, main, etc)
-    required: false
+jobs:
 
-  rootDocsFolder:
-    description: A directory within the repository where the docs are located
-    required: false
+  sync-content-to-wiki:
+    if: always() && format('refs/heads/{0}', github.event.repository.default_branch) == github.ref && github.event_name != 'gollum'
+    runs-on: [ ubuntu-latest ]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: impresscms-dev/strip-markdown-extensions-from-links-action@v1.0.0
+        with:
+          path: wiki
+      - name: Sync docs folder to wiki
+        uses: newrelic/wiki-sync-action@v1.0.1
+        with:
+          source: docs
+          destination: wiki
+          token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+          gitAuthorName: ${{ env.GIT_AUTHOR_NAME }}
+          gitAuthorEmail: ${{ env.GIT_AUTHOR_EMAIL }}
 
-  convertRootReadmeToHomePage:
-    description: If true, renames the README.md file to Home.md in the wiki (the wiki homepage)
-    required: false
-    default: false
+  job-sync-wiki-to-docs:
+    if: github.event_name == 'gollum'
+    runs-on: [ ubuntu-latest ]
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+          ref: ${{ github.event.repository.default_branch }}
+      - name: Is this safe to do?
+        id: safe
+        run: |
+          # to check if the Home.md file exists locally already, is so we can assume a sync has been done, and bidirection can now run safely.
+          INDEX_EXISTS=$(find docs/* -name "Home.md")
+          
+          if [ ! -z $INDEX_EXISTS ] 
+          then
+            echo "not a first time run"
+          else
+            OUTPUT="# Oopsy, we've hit a road block, but we're almost there \n
+            :rocket: - you are on your way, but first you need to sync content to the wiki first before the reverse can happen else you will lose data\n
+            this can be done by running this job manually on your default branch whilst ensuring you have\n
+            created a md file in docs named Home.md to pass this step"
+            echo -e $OUTPUT >> $GITHUB_STEP_SUMMARY
+            exit 1
+          fi
+        shell: bash
+      - name: Create branch first
+        run: |
+          git checkout -b $SYNC_CHANGES_REPO_NAME
+        shell: bash
+      - name: Sync Wiki to Docs
+        uses: newrelic/wiki-sync-action@v1.0.1
+        with:
+          source: wiki
+          destination: docs
+          token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+          gitAuthorName: ${{ env.GIT_AUTHOR_NAME }}
+          gitAuthorEmail: ${{ env.GIT_AUTHOR_EMAIL }}
+          branch: ${{ env.SYNC_CHANGES_REPO_NAME }}
 
-  useHeaderForWikiName:
-    description: If true, names wiki pages according to the top header of the source file (using `#`)
-    required: false
-    default: false
-
-  customWikiFileHeaderFormat:
-    description: |
-      If set, inserts a header at the top of each wiki file with the given format
-      Supports the following format subsitutions:
-        - {sourceFileLink}: the absolute url to the source file in the repo
-    required: false
-
-  customCommitMessageFormat:
-    description: |
-      If set, uses the given format for the commit message to the wiki. Useful to correlate changes to the source.
-      Supports the following format subsitutions:
-        - {commitMessage}: the latest commit message for HEAD
-        - {shaFull}: the full SHA of HEAD
-        - {shaShort}: the short SHA of HEAD
-    required: false
-
-branding:
-  color: purple
-  icon: terminal
-
-runs:
-  using: node12
-  main: _init/index.js
+      - name: Create pull-request
+        uses: repo-sync/pull-request@v2
+        with:
+          source_branch: ${{ env.SYNC_CHANGES_REPO_NAME }}
+          destination_branch: ${{ github.event.repository.default_branch }}
+          pr_title: "[Chore] - Syncing Wiki changes in ${{ env.SYNC_CHANGES_REPO_NAME }} into default branch"
+          pr_body: ":crown: *An automated PR* This is an automated PR to sync this repository's wiki docs with your docs in the repo via a PR."
+          pr_label: "docs,automation"
+          pr_draft: false
+          pr_allow_empty: false
+          github_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
