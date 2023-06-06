@@ -17,18 +17,15 @@ sudo apt-get install unzip
   ```bash
   unzip utbot-release-2022.12.0.zip
   ```
-4. Install and run the server with the _root_ privileges:
+4. Install and run the server:
   ```bash
-  sudo chmod +x unpack_and_run_utbot.sh && ./unpack_and_run_utbot.sh
+  chmod +x unpack_and_run_utbot.sh && ./unpack_and_run_utbot.sh
   ```
 
 To **restart** the server:
   ```bash
-  sudo /utbot_distr/utbot_server_restart.sh
+  /utbot_distr/utbot_server_restart.sh
   ```
-To **kill** the server, use `kill $pid`.
+To **kill** the server, use `kill`.
 
-To **run** the UnitTestBot C/C++ server **on the other port**, navigate to the `utbot_distr` directory and run the script:
-```sh
-$ ./utbot_server_restart.sh $PORT
 ```

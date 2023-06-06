@@ -1,4 +1,4 @@
-# Run GitHub Action
+# GitHub Action
 
 WIth [UnitTestBot GitHub Action](https://github.com/UnitTestBot/UTBotCpp-action) you can generate and run unit tests 
 for your project directly on GitHub — and get the SARIF report.
@@ -38,7 +38,7 @@ jobs:
 
 Make sure you use the up to date versions:
 * `uses: UnitTestBot/UTBotCpp-action@[version]}` — for [UnitTestBot GitHub Action](https://github.com/UnitTestBot/UTBotCpp-action/releases)
-* `utbot_version: '[versoin]'` — for the [UnitTestBot](https://github.com/UnitTestBot/UTBotCpp/releases) engine
+* `utbot_version: '[version]'` — for the [UnitTestBot](https://github.com/UnitTestBot/UTBotCpp/releases) engine
 
 [[images/github-action/gh-action-yml.PNG|Adding workflow]]
 

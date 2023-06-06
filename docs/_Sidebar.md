@@ -1,53 +1,39 @@
 # User guide
 
-## 0 – [Intro](https://github.com/UnitTestBot/UTBotCpp/wiki/Intro)
+## [System requirements](system-requirements)
 
-* [What is UnitTestBot C/C++](https://github.com/UnitTestBot/UTBotCpp/wiki/Intro#what-is-unittestbot-cc)
-* [Why to install both server and client](https://github.com/UnitTestBot/UTBotCpp/wiki/Intro#why-to-install-both-server-and-client)
-* [Make sure you can build your project](https://github.com/UnitTestBot/UTBotCpp/wiki/Intro#make-sure-you-can-build-your-project)
-* [Check the supported language features](https://github.com/UnitTestBot/UTBotCpp/wiki/Intro#check-the-supported-language-features)
+## [UnitTestBot server](install-server)
 
-## 1 – [Check system requirements](https://github.com/UnitTestBot/UTBotCpp/wiki/system-requirements)
+* [**Linux**](linux)
+   * [Local installation](install-server-on-ubuntu)
+   * [Remote installation via Docker](linux-remote)
+* [**Windows**](windows)
+   * [Local installation via WSL](windows-local)
+   * [Remote installation via Docker](windows-remote)
+* [**macOS**](macos)
 
-## 2 – [Install the UnitTestBot server](https://github.com/UnitTestBot/UTBotCpp/wiki/install-server)
+## [UnitTestBot client](install_client)
 
-* [For **Linux** or **macOS**](https://github.com/UnitTestBot/UTBotCpp/wiki/linux-macos)
-   * [Set up Docker](https://github.com/UnitTestBot/UTBotCpp/wiki/set-up-docker-os)
-   * [Install dependencies and GCC](https://github.com/UnitTestBot/UTBotCpp/wiki/install-dependencies-gcc9)
-   * [Install server](https://github.com/UnitTestBot/UTBotCpp/wiki/install-server-on-ubuntu)
-* [For **Windows**](https://github.com/UnitTestBot/UTBotCpp/wiki/windows)
-   * Using WSL
-      * [Set up WSL](https://github.com/UnitTestBot/UTBotCpp/wiki/install-wsl)
-      * [Install dependencies and GCC](https://github.com/UnitTestBot/UTBotCpp/wiki/install-dependencies-gcc9)
-      * [Install server](https://github.com/UnitTestBot/UTBotCpp/wiki/install-server-on-ubuntu)
-   * Using Docker via WSL
-      * [Set up WSL](https://github.com/UnitTestBot/UTBotCpp/wiki/install-wsl)
-      * [Set up Docker](https://github.com/UnitTestBot/UTBotCpp/wiki/set-up-docker-os)
-      * [Install dependencies and GCC](https://github.com/UnitTestBot/UTBotCpp/wiki/install-dependencies-gcc9)
-      * [Install server](https://github.com/UnitTestBot/UTBotCpp/wiki/install-server-on-ubuntu)
+### [Visual Studio Code plugin](vscode-overall)
 
-## 3 – [Install the UnitTestBot client](https://github.com/UnitTestBot/UTBotCpp/wiki/install_client)
+* [Install and configure the plugin](vscode-install-and-configure)
+* [Generate tests with default configuration](vscode-generate-tests)
+* [Fine-tune test generation](vscode-fine-tune)
+* [Get use of test results](vscode-get-use-of-results)
 
-### 3a – [Visual Studio Code plugin](https://github.com/UnitTestBot/UTBotCpp/wiki/vscode-overall)
+### [CLion plugin](clion-overall)
 
-* [Install and configure the plugin](https://github.com/UnitTestBot/UTBotCpp/wiki/vscode-install-and-configure)
-* [Generate tests with default configuration](https://github.com/UnitTestBot/UTBotCpp/wiki/vscode-generate-tests)
-* [Fine-tune test generation](https://github.com/UnitTestBot/UTBotCpp/wiki/vscode-fine-tune)
-* [Get use of test results](https://github.com/UnitTestBot/UTBotCpp/wiki/vscode-get-use-of-results)
+* [Install and configure the plugin](clion-install-and-configure)
+* [Generate tests with default configuration](clion-generate-tests)
+* [Fine-tune test generation](clion-fine-tune)
+* [Get use of test results](clion-get-use-of-results)
 
-### 3b – [CLion plugin](https://github.com/UnitTestBot/UTBotCpp/wiki/clion-overall)
-
-* [Install and configure the plugin](https://github.com/UnitTestBot/UTBotCpp/wiki/clion-install-and-configure)
-* [Generate tests with default configuration](https://github.com/UnitTestBot/UTBotCpp/wiki/clion-generate-tests)
-* [Fine-tune test generation](https://github.com/UnitTestBot/UTBotCpp/wiki/clion-fine-tune)
-* [Get use of test results](https://github.com/UnitTestBot/UTBotCpp/wiki/clion-get-use-of-results)
-
-### 4 – [Run GitHub Action](https://github.com/UnitTestBot/UTBotCpp/wiki/GitHub-action)
+## [GitHub Action](GitHub-action)
 
 ## Supported syntax
 
-* [C](https://github.com/UnitTestBot/UTBotCpp/wiki/c-syntax)
-* [C++](https://github.com/UnitTestBot/UTBotCpp/wiki/cpp-syntax)
+* [C](c-syntax)
+* [C++](cpp-syntax)
 
 # Contributor guides
 

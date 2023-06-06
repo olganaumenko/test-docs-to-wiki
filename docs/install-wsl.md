@@ -1,4 +1,3 @@
-
 # Install Windows Subsystem for Linux (WSL)
 
 Before installing WSL1 or WSL2 on you Windows 10 or Windows 11 machine, make sure virtualization is enabled:

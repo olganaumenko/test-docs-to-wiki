@@ -43,7 +43,7 @@ In the **Editor**, place the caret at the function body. Right-click, scroll dow
 **UTBot Generate Tests...** and choose the required option:
 
 - **for Current File**
-> You can generate tests for `'*.c'` files.
+> You can generate tests for `*.c` or `*.cpp` files.
 
 - **for Current Function**
 > Only public functions (declared in a corresponding header file) are considered as test targets.

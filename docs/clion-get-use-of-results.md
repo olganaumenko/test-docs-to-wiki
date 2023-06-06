@@ -20,7 +20,7 @@ Error region:
 
 [[images/clion/clion-region-error.PNG|Error region]]
 
-Test structure follows the [Google Test format](http://google.github.io/googletest/gmock_for_dummies.html).
+Test structure follows the [Google Test format](http://google.github.io/googletest/).
 
 According to settings, they may have short or verbose descriptions:
 * Verbose descriptions include parameter declarations, expected and actual values, and the function call (as in the
@@ -68,7 +68,7 @@ the red ones mark the failing tests.
 
 ## Get SARIF reports
 
-You can find the SARIF reports as well as the statistics in the `utbot_report` directory.
+You can find the SARIF reports in the `utbot_report` directory.
 
 ### SARIF
 
@@ -79,29 +79,4 @@ You can view the `.sarif` files right in CLion **Editor**.
 
 [[images/clion/clion-sarif.PNG|SARIF report]]
 
-### Generation and execution statistics
-
-You can find the statistics in the `utbot_report` directory:
-
-[[images/clion/clion-statistics.PNG|Generation and execution statistics]]
-
-Generation statistics are:
-* KLEE Time (s)
-* Solver Time (s)
-* Resolution Time (s)
-* Regression Tests Generated
-* Error Tests Generated
-* Covered Functions
-* Total functions
-
-Execution statistics are:
-* Google Test Execution Time (s)
-* Total Tests Number
-* Passed Tests Number
-* Failed Tests Number
-* Death Tests Number
-* Interrupted Tests Number
-* Total Lines Number
-* Covered Lines Number
-* Line Coverage Ratio (%)
 

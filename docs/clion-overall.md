@@ -2,9 +2,9 @@
 
 Learn how to:
 
-* [Install and configure the plugin](https://github.com/UnitTestBot/UTBotCpp/wiki/clion-install-and-configure)
-* [Generate tests with default configuration](https://github.com/UnitTestBot/UTBotCpp/wiki/clion-generate-tests)
-* [Fine-tune test generation](https://github.com/UnitTestBot/UTBotCpp/wiki/clion-fine-tune)
-* [Get use of test results](https://github.com/UnitTestBot/UTBotCpp/wiki/clion-get-use-of-results)
+* [Install and configure the plugin](clion-install-and-configure)
+* [Generate tests with default configuration](clion-generate-tests)
+* [Fine-tune test generation](clion-fine-tune)
+* [Get use of test results](clion-get-use-of-results)
 
 

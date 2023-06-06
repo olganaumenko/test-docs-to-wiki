@@ -12,7 +12,7 @@
 
 ## Install the plugin
 
-Make sure you have already [installed the UnitTestBot C/C++ server](https://github.com/UnitTestBot/UTBotCpp/wiki/install-server).
+Make sure you have already [installed the UnitTestBot C/C++ server](install-server).
 
 To install the plugin from the VSIX file:
 
@@ -86,17 +86,21 @@ _via Docker_, you need to sync files within a local directory to a remote server
 ```json 
 {
    "name": "UTBot Server",
-   "host": "127.0.0.1", // your host name or IP address
+   "host": "127.0.0.1", // IP address of the UnitTestBot server
    "protocol": "sftp",
    "port": 5522,
    "username": "utbot",
    "password": "utbot",
-   "remotePath": "/mnt/c/Users/user/utbot-example/c-example/", // the path to your project on the server host
+   "remotePath": "/home/utbot/remote/c-example/", // the path to your project on the server host
    "uploadOnSave": true,
    "useTempFile": false,
    "openSsh": false
 }
 ``` 
+3. Go to **View** > **Command Palette...** and enter _SFTP: Sync Local -> Remote_. Check **SFTP Explorer** for the 
+   uploaded files.
+
+[[images/vscode/vscode-sftp-explorer.PNG|Visual Studio Code SFTP Explorer]]
 
 #### Perform the initial plugin setup
 

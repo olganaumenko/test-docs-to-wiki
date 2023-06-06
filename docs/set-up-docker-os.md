@@ -3,7 +3,7 @@
 Install Docker using the instructions for your OS:
 
 * [Linux](https://docs.docker.com/engine/install/) (external link)
-* [Windows](https://github.com/UnitTestBot/UTBotCpp/wiki/install-docker-windows)
+* [Windows](install-docker-windows)
 * [macOS](https://pilsniak.com/how-to-install-docker-on-mac-os-using-brew) (external link)
 
 Run a Docker container with Ubuntu 18.04:
