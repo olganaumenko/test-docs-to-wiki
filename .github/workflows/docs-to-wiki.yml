@@ -1,2 +1,51 @@
-- name: github-docs-to-wiki
-  uses: cmbrose/github-docs-to-wiki@v0.24
+name: github-docs-to-wiki
+author: cmbrose
+description: Converts markdown content in a repository into a wiki.
+
+inputs:
+
+  githubToken:
+    description: The GitHub PAT, used to clone the wiki repo
+    required: true
+
+  defaultBranch:
+    description: The default branch name (master, main, etc)
+    required: false
+
+  rootDocsFolder:
+    description: A directory within the repository where the docs are located
+    required: false
+
+  convertRootReadmeToHomePage:
+    description: If true, renames the README.md file to Home.md in the wiki (the wiki homepage)
+    required: false
+    default: false
+
+  useHeaderForWikiName:
+    description: If true, names wiki pages according to the top header of the source file (using `#`)
+    required: false
+    default: false
+
+  customWikiFileHeaderFormat:
+    description: |
+      If set, inserts a header at the top of each wiki file with the given format
+      Supports the following format subsitutions:
+        - {sourceFileLink}: the absolute url to the source file in the repo
+    required: false
+
+  customCommitMessageFormat:
+    description: |
+      If set, uses the given format for the commit message to the wiki. Useful to correlate changes to the source.
+      Supports the following format subsitutions:
+        - {commitMessage}: the latest commit message for HEAD
+        - {shaFull}: the full SHA of HEAD
+        - {shaShort}: the short SHA of HEAD
+    required: false
+
+branding:
+  color: purple
+  icon: terminal
+
+runs:
+  using: node12
+  main: _init/index.js
