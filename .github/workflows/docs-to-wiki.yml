@@ -24,7 +24,7 @@ jobs:
       - name: Sync docs to wiki
         uses: newrelic/wiki-sync-action@main
         with:
-          source: docs
+          source: docs/wiki
           destination: wiki
           token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
           gitAuthorName: ${{ env.GIT_AUTHOR_NAME }}
