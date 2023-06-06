@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     branches: [main]
     paths:
-      - docs/wiki
+      - wiki
       - .github/workflows/publish-wiki.yml
 concurrency:
   group: publish-wiki
@@ -17,5 +17,5 @@ jobs:
       - uses: actions/checkout@v3
       - uses: impresscms-dev/strip-markdown-extensions-from-links-action@v1.0.0
         with:
-          path: docs/wiki
+          path: wiki
       - uses: Andrew-Chen-Wang/github-wiki-action@v4
