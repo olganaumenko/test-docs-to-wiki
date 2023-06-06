@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     branches: [main]
     paths:
-      - docs
+      - wiki
       - .github/workflows/publish-wiki.yml
 concurrency:
   group: publish-wiki
