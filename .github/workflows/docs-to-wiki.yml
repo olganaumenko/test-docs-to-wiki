@@ -15,4 +15,4 @@ jobs:
         uses: cmbrose/github-docs-to-wiki@v0.24
         with:
           githubToken: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
-          rootDocsFolder: "docs/wiki"
+          rootDocsFolder: "wiki"
