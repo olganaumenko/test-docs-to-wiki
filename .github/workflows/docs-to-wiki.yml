@@ -20,9 +20,9 @@ jobs:
 
 
         with:
-          username: AbdullahAlfaraj
+          username: olganaumenko
           access_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
-          wiki_folder: wiki
+          wiki_folder: docs/wiki
           commit_username: 'Olga Naumenko '
           commit_email: '64418523+olganaumenko@users.noreply.github.com'
           commit_message: 'action: wiki sync'
