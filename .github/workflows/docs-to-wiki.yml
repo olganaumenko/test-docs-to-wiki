@@ -1,4 +1,4 @@
-name: Documentation
+name: Publish docs to Wiki
 
 on: [push]
 
@@ -8,6 +8,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+      - uses: impresscms-dev/strip-markdown-extensions-from-links-action@v1.0.0
       # Additional steps to generate documentation in "Documentation" directory
       - name: Upload Documentation to Wiki
         uses: SwiftDocOrg/github-wiki-publish-action@v1
@@ -15,3 +16,4 @@ jobs:
           path: "docs/wiki"
         env:
           GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+
