@@ -1,11 +1,12 @@
 # Install the UnitTestBot C/C++ server
 
+TEST
 To meet [system requirements](system-requirements.md), 
 choose one of the UnitTestBot C/C++ installation options and prepare the corresponding environment:
 
 * [**Linux**](linux)
 	* [Local installation](install-server-on-ubuntu.md)
-	* [Remote installation via Docker](linux-remote)
+	* [Remote installation via Docker](linux-remote.md)
 * [**Windows**](windows)
 	* [Local installation via WSL](windows-local)
 	* [Remote installation via Docker](windows-remote)
