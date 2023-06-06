@@ -14,19 +14,19 @@
 
 ## [UnitTestBot client](install_client)
 
-### [Visual Studio Code plugin](vscode-overall)
+### [Visual Studio Code plugin](vscode/vscode-overall.md)
 
-* [Install and configure the plugin](vscode-install-and-configure)
-* [Generate tests with default configuration](vscode-generate-tests)
-* [Fine-tune test generation](vscode-fine-tune)
-* [Get use of test results](vscode-get-use-of-results)
+* [Install and configure the plugin](vscode/vscode-install-and-configure.md)
+* [Generate tests with default configuration](vscode/vscode-generate-tests.md)
+* [Fine-tune test generation](vscode/vscode-fine-tune.md)
+* [Get use of test results](vscode/vscode-get-use-of-results.md)
 
-### [CLion plugin](clion-overall)
+### [CLion plugin](clion/clion-overall.md)
 
-* [Install and configure the plugin](clion-install-and-configure)
-* [Generate tests with default configuration](clion-generate-tests)
-* [Fine-tune test generation](clion-fine-tune)
-* [Get use of test results](clion-get-use-of-results)
+* [Install and configure the plugin](clion/clion-install-and-configure.md)
+* [Generate tests with default configuration](clion/clion-generate-tests.md)
+* [Fine-tune test generation](clion/clion-fine-tune.md)
+* [Get use of test results](clion/clion-get-use-of-results.md)
 
 ## [GitHub Action](GitHub-action)
 
