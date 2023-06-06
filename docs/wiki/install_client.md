@@ -3,5 +3,5 @@
 To connect to the UnitTestBot C/C++ server you have already [installed](https://github.com/olganaumenko/UTBotCPPWiki_test/wiki/install-server),
 choose one of the client interfaces and follow the installation and usage instructions:
 
-* [Visual Studio Code plugin](vscode/vscode-overall.md)
-* [CLion plugin](clion/clion-overall.md)
+* [Visual Studio Code plugin](vscode-overall.md)
+* [CLion plugin](clion-overall.md)

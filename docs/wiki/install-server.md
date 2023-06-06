@@ -3,13 +3,13 @@
 To meet [system requirements](system-requirements.md), 
 choose one of the UnitTestBot C/C++ installation options and prepare the corresponding environment:
 
-* [**Linux**](linux)
+* [**Linux**](linux.md)
 	* [Local installation](install-server-on-ubuntu.md)
 	* [Remote installation via Docker](linux-remote.md)
-* [**Windows**](windows)
-	* [Local installation via WSL](windows-local)
-	* [Remote installation via Docker](windows-remote)
-* [**macOS**](macos)
+* [**Windows**](windows.md)
+	* [Local installation via WSL](windows-local.md)
+	* [Remote installation via Docker](windows-remote.md)
+* [**macOS**](macos.md)
 
 **Local or remote?**
 
