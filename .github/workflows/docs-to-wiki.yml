@@ -1,19 +1,18 @@
+
+name: Publish to GitHub Wiki
+
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-name: Wiki Sync
+    branches: [master]
+  workflow_dispatch:
+
 jobs:
-  update-wiki:
+  wiki:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: Sync Wiki
-        uses: cmbrose/github-docs-to-wiki@master
+      - uses: actions/checkout@v2
+      - name: Publish to wiki
+        uses: cmbrose/github-docs-to-wiki@v0.24
         with:
-          githubToken: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
-          rootDocsFolder: docs
-          useHeaderForWikiName: true
+          githubToken: ${{ secrets.GH_PAT }}
+          rootDocsFolder: "wiki"
