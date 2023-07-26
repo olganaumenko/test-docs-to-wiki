@@ -33,4 +33,4 @@ Though KLEE is a mature project, it still supports not all the C language constr
 implemented several KLEE patches to support _floating point_ types, _input/output_ operations, and _inline
 assemblies_.
 
-UnitTestBot C/C++ still has limited support for C++ features. Check supported [C](c-syntax.md) and [C++](cpp-syntax.md) syntax.
+UnitTestBot C/C++ still has limited support for C++ features. Check supported [C](c-syntax) and [C++](cpp-syntax) syntax.

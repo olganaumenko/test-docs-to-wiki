@@ -1,39 +1,39 @@
 # User guide
 
-## [System requirements](system-requirements.md)
+## [System requirements](system-requirements)
 
-## [UnitTestBot server](install-server.md)
+## [UnitTestBot server](install-server)
 
-* [**Linux**](linux.md)
-   * [Local installation](install-server-on-ubuntu.md)
-   * [Remote installation via Docker](linux-remote.md)
-* [**Windows**](windows.md)
-   * [Local installation via WSL](windows-local.md)
-   * [Remote installation via Docker](windows-remote.md)
-* [**macOS**](macos.md)
+* [**Linux**](linux)
+   * [Local installation](install-server-on-ubuntu)
+   * [Remote installation via Docker](linux-remote)
+* [**Windows**](windows)
+   * [Local installation via WSL](windows-local)
+   * [Remote installation via Docker](windows-remote)
+* [**macOS**](macos)
 
-## [UnitTestBot client](install_client.md)
+## [UnitTestBot client](install_client)
 
-### [Visual Studio Code plugin](vscode-overall.md)
+### [Visual Studio Code plugin](vscode-overall)
 
-* [Install and configure the plugin](vscode-install-and-configure.md)
-* [Generate tests with default configuration](vscode-generate-tests.md)
-* [Fine-tune test generation](vscode-fine-tune.md)
-* [Get use of test results](vscode-get-use-of-results.md)
+* [Install and configure the plugin](vscode-install-and-configure)
+* [Generate tests with default configuration](vscode-generate-tests)
+* [Fine-tune test generation](vscode-fine-tune)
+* [Get use of test results](vscode-get-use-of-results)
 
-### [CLion plugin](clion-overall.md)
+### [CLion plugin](clion-overall)
 
-* [Install and configure the plugin](clion-install-and-configure.md)
-* [Generate tests with default configuration](clion-generate-tests.md)
-* [Fine-tune test generation](clion-fine-tune.md)
-* [Get use of test results](clion-get-use-of-results.md)
+* [Install and configure the plugin](clion-install-and-configure)
+* [Generate tests with default configuration](clion-generate-tests)
+* [Fine-tune test generation](clion-fine-tune)
+* [Get use of test results](clion-get-use-of-results)
 
-## [GitHub Action](github-action.md)
+## [GitHub Action](GitHub-action)
 
 ## Supported syntax
 
-* [C](c-syntax.md)
-* [C++](cpp-syntax.md)
+* [C](c-syntax)
+* [C++](cpp-syntax)
 
 # Contributor guides
 
@@ -43,7 +43,7 @@
 * [Create a release](create-release)
 * [Testing release in Docker](testing-release-utbotcpp-in-docker)
 * [Label usage guideline](Labels-usage-guidelines)
-* [Troubleshooting](troubleshooting.md)
+* [Troubleshooting](troubleshooting)
 
 ## Advanced
 

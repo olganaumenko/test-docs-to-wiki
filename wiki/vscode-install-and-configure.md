@@ -12,7 +12,7 @@
 
 ## Install the plugin
 
-Make sure you have already [installed the UnitTestBot C/C++ server](install-server.md).
+Make sure you have already [installed the UnitTestBot C/C++ server](install-server).
 
 To install the plugin from the VSIX file:
 
