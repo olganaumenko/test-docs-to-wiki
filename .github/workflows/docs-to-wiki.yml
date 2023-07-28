@@ -1,7 +1,6 @@
-name: Documentation
+name: Docs-to-wiki
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main

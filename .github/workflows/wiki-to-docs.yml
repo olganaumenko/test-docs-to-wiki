@@ -1,14 +1,8 @@
-name: Documentation
+name: Wiki-to-docs
 
 on:
-  workflow_dispatch:
   push:
-    branches:
-      - main
-    paths:
-      - "docs/**"
-  repository_dispatch:
-    types: [docs]
+
   gollum:
 
 env:
