@@ -1,6 +1,6 @@
 # Welcome to UnitTestBot C/C++ Wiki!
 
-**Testing docs-to-wiki first**
+**Testing wiki-to-docs second**
 
 Generate ready-to-use test cases for your C/C++ code and feel free to contribute.
 
