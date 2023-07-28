@@ -1,51 +1,17 @@
 name: Documentation
 
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - develop
-    paths:
-      - "wiki/**"
-  repository_dispatch:
-    types: [docs]
-  gollum:
-
-env:
-  GIT_AUTHOR_NAME: Actionbot
-  GIT_AUTHOR_EMAIL: actions@github.com
+on: [push]
 
 jobs:
-  job-sync-docs-to-wiki:
+  build:
     runs-on: ubuntu-latest
-    if: github.event_name != 'gollum'
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v2
-      - name: Sync docs to wiki
-        uses: newrelic/wiki-sync-action@main
-        with:
-          source: docs
-          destination: wiki
-          token: ${{ secrets.NEWRELIC_BOT_TOKEN }}
-          gitAuthorName: ${{ env.GIT_AUTHOR_NAME }}
-          gitAuthorEmail: ${{ env.GIT_AUTHOR_EMAIL }}
 
-  job-sync-wiki-to-docs:
-    runs-on: ubuntu-latest
-    if: github.event_name == 'gollum'
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v1
+      # Additional steps to generate documentation in "Documentation" directory
+      - name: Upload Documentation to Wiki
+        uses: SwiftDocOrg/github-wiki-publish-action@v1
         with:
-          token: ${{ secrets.NEWRELIC_BOT_TOKEN }} # allows us to push back to repo
-          ref: develop
-      - name: Sync Wiki to Docs
-        uses: newrelic/wiki-sync-action@main
-        with:
-          source: wiki
-          destination: docs
-          token: ${{ secrets.NEWRELIC_BOT_TOKEN }}
-          gitAuthorName: ${{ env.GIT_AUTHOR_NAME }}
-          gitAuthorEmail: ${{ env.GIT_AUTHOR_EMAIL }}
-          branch: develop # since default branch is develop in this example
+          path: "Documentation"
+        env:
+          GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
