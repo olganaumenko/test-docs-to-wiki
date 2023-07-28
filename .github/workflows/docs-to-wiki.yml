@@ -49,4 +49,4 @@ jobs:
           token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN2 }}
           gitAuthorName: ${{ env.GIT_AUTHOR_NAME }}
           gitAuthorEmail: ${{ env.GIT_AUTHOR_EMAIL }}
-          branch: main # since default branch is develop in this example
+          branch: main # since default branch is main in this example
