@@ -1,6 +1,6 @@
 # Welcome to UnitTestBot C/C++ Wiki!
 
-NOW TEST FWD
+new test
 
 Generate ready-to-use test cases for your C/C++ code and feel free to contribute.
 
