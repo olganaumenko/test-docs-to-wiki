@@ -7,7 +7,6 @@ on:
       - main
     paths:
       - "docs/**"
-      - wiki
   repository_dispatch:
     types: [docs]
   gollum:
