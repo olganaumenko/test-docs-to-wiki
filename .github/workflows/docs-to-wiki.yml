@@ -14,6 +14,7 @@ on:
 env:
   GIT_AUTHOR_NAME: Actionbot
   GIT_AUTHOR_EMAIL: actions@github.com
+  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
 jobs:
   job-sync-docs-to-wiki:
@@ -27,7 +28,7 @@ jobs:
         with:
           source: docs
           destination: wiki
-          token: ${{ secrets.NEWRELIC_BOT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           gitAuthorName: ${{ env.GIT_AUTHOR_NAME }}
           gitAuthorEmail: ${{ env.GIT_AUTHOR_EMAIL }}
 
@@ -45,7 +46,7 @@ jobs:
         with:
           source: wiki
           destination: docs
-          token: ${{ secrets.NEWRELIC_BOT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           gitAuthorName: ${{ env.GIT_AUTHOR_NAME }}
           gitAuthorEmail: ${{ env.GIT_AUTHOR_EMAIL }}
           branch: develop # since default branch is develop in this example
