@@ -1,7 +1,7 @@
 # Welcome to UnitTestBot C/C++ Wiki!
 
 
-TESTTEST - BIdirect
+TEST docs to wiki
 
 Generate ready-to-use test cases for your C/C++ code and feel free to contribute.
 
